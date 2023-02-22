@@ -1,0 +1,43 @@
+program bigtest
+	declare a,b,c,x,y;
+	//user gives 3 values for a, b, c from keyboard
+	input a;
+	input b;
+	input c;
+	x := 0;
+	y := 0;
+	if (a=1) then    //if-case
+		while (b<c)  //while-case
+			if (b<5) then
+				dowhile //dowhile-case
+					b := b + a;
+					x := x + 1
+				enddowhile(x=10)
+			else
+				forcase  //forcase-case
+					when (b=5) : b := b * 2
+					when (b=6) : b := b * 4
+					when (b=7) : b := b * 6
+					default: b := b / 2 enddefault
+				endforcase
+			endif
+		endwhile
+	else 
+		loop  //loop-case
+			if(c<5) then
+				dowhile  //dowhile-case
+					c := c + a; 
+					y := y + 2
+				enddowhile(y=12);
+				exit
+			else
+				incase  //incase-case
+					when (c=5) : c := a*2
+					when (c=6) : c := c/2
+					when (c>6) : exit //exit from loop
+				endincase
+			endif
+		endloop
+	endif
+
+endprogram

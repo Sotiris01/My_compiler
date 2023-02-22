@@ -1,0 +1,30 @@
+program example3
+	declare a,b,c,d,e,x,y;
+	declare px,py,temp;
+	loop
+		if(a=e) then
+			c:=c+e
+		else
+			loop
+				if(not[a<=d]) then
+					exit
+				endif;
+				if(not[a<c and b<d]) then
+					exit;
+					b:=a+b;
+					a:=a+b
+				endif
+				
+			endloop
+		endif;
+		
+	endloop;
+	temp:=px;
+	x:=1;
+	y:=2
+endprogram
+
+
+
+
+

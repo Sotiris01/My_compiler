@@ -1,0 +1,16 @@
+program MAX 
+	declare a,b,c,d;
+	function max(in x,in y)
+		if(x>y) then
+			return x
+		else
+			return y
+		endif
+	endfunction;
+	a := 1;
+	b := 2;
+	c := 3;
+	d := 4;
+	c:=max(in max(in a, in b),in max(in c,in d));
+	print c
+endprogram

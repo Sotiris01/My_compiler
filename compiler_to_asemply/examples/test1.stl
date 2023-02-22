@@ -1,0 +1,29 @@
+program example1
+ 	declare d,i,g,f;
+ 	declare x;
+ 	declare y;
+
+
+ 	function two(in f, in d)
+ 		declare k, j;
+ 		k:=g;
+ 		j:=g;
+ 		if(k > j) then
+ 			k := k+j
+ 		endif;
+		return f
+ 	endfunction
+
+
+ 	function one ()
+ 		d := d + 1; 
+ 		f := f + d;
+ 		i := two(in f, in d);
+		return d
+ 	endfunction
+
+
+ 	i:=5;
+ 	g:=1;
+
+endprogram

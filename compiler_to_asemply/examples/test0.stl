@@ -1,0 +1,34 @@
+program example1
+ 	declare d,i,g,f,m;
+ 	declare x;
+ 	declare y;
+
+ 	function two (in g, inout d, inandout f) 
+ 		function three ()
+ 			declare k ,j;
+ 			k:=g;
+ 			j:=g;
+ 			dowhile  
+ 				if (k>i) then
+ 					k:=k-1
+ 				endif;
+ 				j:=j*k;
+ 				k:=k+g
+ 			enddowhile (k<1);
+ 			m:=j;
+ 			return m+1;
+ 			x:=7
+ 		endfunction;
+ 		i:=three ();
+		return g
+ 	endfunction
+
+ 	function one (in g)
+ 		g:=two(in g, inout d, inandout f);
+		return g
+ 	endfunction
+
+ 	i:=5;
+ 	g:=1;
+ 	g:=one(in g)
+endprogram

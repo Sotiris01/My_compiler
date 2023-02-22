@@ -1,0 +1,29 @@
+program symbol
+	declare A,a,b,c;
+	function P1(inandout x, inout y)
+		declare a;
+		function F11(in x)
+			declare aaaa;
+			b:=a;
+			aaaa:=x;
+			c:= F11(in x);
+			return c
+		endfunction
+
+		function F21(in x)
+			c:=F11(in x);
+			return c
+		endfunction
+		
+		return x
+	endfunction
+
+	function P2(in y)
+		declare xxx;
+		y:= A;
+		xxx:= P1(inandout xxx, inout y);
+		return y
+	endfunction
+	a := P1(inandout a, inout b);
+	b := P2(in c)
+endprogram

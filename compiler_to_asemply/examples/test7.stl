@@ -1,0 +1,29 @@
+program testPar
+	declare a,y;
+	function parIn(in x)
+		x := 5;
+		return x
+	endfunction
+
+	function parInout(inout x)
+		x := 5;
+		return x
+	endfunction
+
+	function parInandout(inandout x)
+		x := 5;
+		return x
+	endfunction
+
+	a := 1;
+	y := parIn(in a);
+	print a;
+
+	a := 1;
+	y := parInout(inout a);
+	print a;
+
+	a := 1;
+	y := parInandout(inandout a);
+	print a;
+endprogram
