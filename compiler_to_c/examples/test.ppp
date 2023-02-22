@@ -1,0 +1,103 @@
+
+class god:
+	int sum;;
+
+	def __init__(self): god
+		pass;
+	;
+	def get_sum(self): int
+		return self.sum;
+	;
+	def zeroing(self): - 
+		self.sum = 0;
+	;
+
+
+class class1 inherits god:
+
+	def __init__(self): class1
+		self.sum = 0;;
+
+	def add(self, x1):-
+		self.sum += x1;
+	;
+
+	def add(self, x1, x2):- 
+		int sum = 0;
+		sum = x1 + x1;
+		self.sum = sum;
+	;
+
+	def add(self, x1, x2, x3):- 
+		int sum = 0;
+		sum = x1 + x1 + x3;
+		self.sum = sum;
+	;
+
+
+class class2 inherits god:
+	int limit;;
+
+	def __init__(self): class2
+		self.sum = 0;
+		self.limit = 100;;
+
+	def __init__(self, limit): class2
+		self.sum = 0;
+		self.limit = limit;;
+
+	def add(self):-
+		int input;
+
+		while true:
+			in(input);
+			self.sum += input;
+			if self.sum > self.limit:
+				break;
+			;
+		;
+	;
+
+
+class class3 inherits class2:	
+	def __init__(self): class3
+		self.sum = 0;
+		self.limit = 30;
+	;
+
+
+
+class main:
+	class1 c1;
+	class2 c2;
+	class2 c2_l;
+	class3 c3;;
+
+	def main(self):-
+
+		self.c1 = class1();
+		self.c1.add(5);
+		self.c1.add(5);
+		out(self.c1.get_sum());### should be 10
+		self.c1.zeroing();
+		self.c1.add(2,2);
+		out(self.c1.get_sum());### should be 4
+		self.c1.zeroing();
+		self.c1.add(3,3,3);
+		out(self.c1.get_sum());### should be 9
+
+		self.c2 = class2();
+		### add number to reach 100
+		self.c2.add();
+		out(self.c2.get_sum());### should be greater than 100
+
+		self.c2_l = class2(50);
+		### add numbers to reach 50
+		self.c2_l.add();
+		out(self.c2_l.get_sum());### should be greater than 50
+
+		self.c3 = class3();
+		self.c3.add();
+		out(self.c3.get_sum());### should be greater than 30
+
+	;

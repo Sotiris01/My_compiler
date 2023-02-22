@@ -1,0 +1,158 @@
+
+
+class item:
+	int price;;
+
+	def __init__(self): item
+		self.price = -1;;
+
+	def get_price(self): int
+		return self.price;;
+
+	def set_price(self, price): -
+		self.price = price;;
+
+class book inherits item:
+	int pages;;
+
+	def __init__(self, price, pages): book
+		self.price = price;
+		self.pages = pages;;
+
+	def get_pages(self): int
+		return self.pages;;
+
+	def set_pages(self, pages): -
+		self.pages = pages;;
+
+class cd inherits item:
+	int minutes;;
+
+	def __init__(self, price, minutes): cd
+		self.price = price;
+		self.minutes = minutes;;
+
+	def get_minutes(self): int
+		return self.minutes;;
+
+	def set_minutes(self, minutes):-
+		self.minutes = minutes;;
+
+class basket:
+	int cd_number, book_number ;
+	book book1;
+	book book2;
+	book book3;
+	book book4;
+	book book5;
+	cd cd1;
+	cd cd2;
+	cd cd3;
+	cd cd4;
+	cd cd5;;
+
+	def __init__(self): basket
+		self.book_number = 0;
+		self.cd_number = 0;;
+
+	def add_book(self, price, pages):-
+		self.book_number += 1;
+
+		if self.book_number == 1:
+			self.book1 = book(price, pages);
+
+		elif self.book_number == 2:
+			self.book2 = book(price, pages);
+
+		elif self.book_number == 3:
+			self.book3 = book(price, pages);
+
+		elif self.book_number == 4:
+			self.book4 = book(price, pages);
+
+		elif self.book_number == 5:
+			self.book5 = book(price, pages);
+
+		else:
+			### no more space... :(
+			self.book_number = 5;;
+		;
+
+	def add_cd(self, price, minutes):-
+		self.cd_number += 1;
+
+		if self.cd_number == 1:
+			self.cd1 = cd(price, minutes);
+			
+		elif self.cd_number == 2:
+			self.cd2 = cd(price, minutes);
+
+		elif self.cd_number == 3:
+			self.cd3 = cd(price, minutes);
+
+		elif self.cd_number == 4:
+			self.cd4 = cd(price, minutes);
+
+		elif self.cd_number == 5:
+			self.cd5 = cd(price, minutes);
+
+		else:
+			### no more space... :(
+			self.cd_number = 5;;
+		;
+
+	def total_price(self): int
+		int i = 1;
+		int total = 0;
+
+		while i <= self.book_number :
+			if i == 1:
+				total += self.book1.get_price();
+			elif i == 2:
+				total += self.book2.get_price();
+			elif i == 3:
+				total += self.book3.get_price();
+			elif i == 4:
+				total += self.book4.get_price();
+			elif i == 5:
+				total += self.book5.get_price();;
+			i += 1;
+		; 
+		i = 1;
+		while i <= self.cd_number :
+			if i == 1:
+				total += self.cd1.get_price();
+			elif i == 2:
+				total += self.cd2.get_price();
+			elif i == 3:
+				total += self.cd3.get_price();
+			elif i == 4:
+				total += self.cd4.get_price();
+			elif i == 5:
+				total += self.cd5.get_price();;
+			i += 1;
+		; 
+		return total;
+	;
+
+
+class main:
+	basket my_basket;;
+
+	def main(self):-
+		self.my_basket = basket();
+
+		self.my_basket.add_book(20, 100);
+		self.my_basket.add_book(30, 150);
+		self.my_basket.add_book(35, 170);
+		self.my_basket.add_book(40, 200);
+		self.my_basket.add_book(50, 300);
+
+		self.my_basket.add_cd(20, 30);
+		self.my_basket.add_cd(30, 45);
+		self.my_basket.add_cd(35, 60);
+		self.my_basket.add_cd(40, 75);
+		self.my_basket.add_cd(50, 90);
+
+		out(self.my_basket.total_price());
+	;

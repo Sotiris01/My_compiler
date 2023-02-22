@@ -1,0 +1,156 @@
+
+class Tower:
+	int attack;
+	int health;;
+
+	def __init__(self): Tower
+		self.attack = 0;
+		self.health = 0;;
+
+	def __init__(self, attack, health): Tower
+		self.attack = attack;
+		self.health = health;;
+
+	def AttackFrom(self, EnemyAttack): - 
+		self.health -= EnemyAttack;;
+
+	def Dead(self): bool
+		if self.health <= 0 :
+			return true;
+		else :
+			return false;;;
+
+	def get_attack(self): int
+		return self.attack;;
+
+	def get_health(self): int
+		return self.health;;
+
+	def set_attack(self, new_attack): - 
+		self.attack = new_attack;;
+
+	def set_health(self, new_health): - 
+		self.health = new_health;; 
+
+class DefendTower inherits Tower:
+	int shield;;
+
+	def __init__(self): DefendTower
+		self.attack = 0;
+		self.health = 0;
+		self.shield = 0;;
+
+	def __init__(self, attack, health, shield): DefendTower
+		self.attack = attack;
+		self.health = health;
+		self.shield = shield;;
+
+	def AttackFrom(self, EnemyAttack): -
+		if self.shield > EnemyAttack:
+			self.shield -= EnemyAttack;
+		else:
+			EnemyAttack -= self.shield;
+			self.shield = 0;
+			self.health -= EnemyAttack;;;
+
+	def get_shield(self): int
+		return self.shield;;
+
+	def set_shield(self, new_shield): -
+		self.shield = new_shield;;
+
+class AttackTower inherits Tower:
+	int specialAbility;;
+
+	def __init__(self): AttackTower
+		self.attack = 0;
+		self.health = 0;
+		self.specialAbility = 0;;
+
+	def __init__(self, attack, health, specialAbility): AttackTower
+		self.attack = attack;
+		self.health = health;
+		self.specialAbility = specialAbility;;
+
+	def get_attack(self): int 
+		int tmp;
+		tmp = self.attack + self.specialAbility;
+		return tmp ;;
+
+class Player:
+	int nameID;
+	AttackTower attack_tower;
+	DefendTower defend_tower;;
+
+	def __init__(self, name): Player
+		self.nameID = name;
+		self.attack_tower = AttackTower();
+		self.defend_tower = DefendTower();;
+
+	### First tower
+	def make_attack_tower(self, attack, health, extra): - 
+		self.attack_tower = AttackTower(attack, health, extra);;
+		
+
+	### Second tower
+	def make_defend_tower(self, attack, health, extra): - 
+		self.defend_tower = DefendTower(attack, health, extra);;
+		
+	def Lose(self): bool
+		if self.attack_tower.Dead() and self.defend_tower.Dead():
+			return true;
+		else :
+			return false;;;
+
+	def get_attack_tower(self): AttackTower
+		return self.attack_tower;;
+
+	def get_defend_tower(self): DefendTower
+		return self.defend_tower;;
+
+	def get_name(self): int
+		return self.nameID;;
+
+
+class main:
+	Player red;
+	Player blue;;
+	
+	def main(self): - 
+		int tmp;
+		self.red  = Player(001);
+		self.blue = Player(002);
+
+		# build red's army #
+		self.red.make_attack_tower(9, 15, 3);
+		self.red.make_defend_tower(5, 20, 10);
+
+		# build blue's army #
+		self.blue.make_attack_tower(11, 15, 4);
+		self.blue.make_defend_tower(5, 15, 7);
+
+		while not (self.blue.Lose() or self.red.Lose()):
+
+			# The attack of red #
+			tmp = self.red.get_attack_tower().get_attack();
+			self.blue.get_attack_tower().AttackFrom(tmp);
+			self.blue.get_defend_tower().AttackFrom(tmp);
+			tmp = self.red.get_defend_tower().get_attack();
+			self.blue.get_attack_tower().AttackFrom(tmp);
+			self.blue.get_defend_tower().AttackFrom(tmp);
+
+			# The attack of blue #
+			tmp = self.blue.get_attack_tower().get_attack();
+			self.red.get_attack_tower().AttackFrom(tmp);
+			self.red.get_defend_tower().AttackFrom(tmp);
+			tmp = self.blue.get_defend_tower().get_attack();
+			self.red.get_attack_tower().AttackFrom(tmp);
+			self.red.get_defend_tower().AttackFrom(tmp);
+		;
+
+		if self.blue.Lose():
+			out(self.blue.get_name());;
+		if self.red.Lose():
+			out(self.red.get_name());;
+
+	;

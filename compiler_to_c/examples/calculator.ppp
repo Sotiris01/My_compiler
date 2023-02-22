@@ -1,0 +1,70 @@
+
+class main:
+
+	def is_Zero(self, a): bool
+		if a == 0 :
+			return true;
+		else :
+			return false;
+		;
+	;
+	
+	def add(self, a, b): int
+		int c;
+		c = a + b;
+		return c;
+	;
+
+	def sub(self, a, b): int
+		int c;
+		c = a - b;
+		return c ;
+	;
+
+	def mul(self, a, b): int
+		int c ;
+		c = a * b;
+		return a * b;
+	;
+
+	def div(self, a, b): int
+		if not self.is_Zero(b):
+			return a / b;
+		;
+		return 0;
+	;
+
+	def main(self): - 
+		int a, b, result, op;
+
+		while true :
+
+			# <1> for add
+			  <2> for sub
+			  <3> for mul
+			  <4> for div
+			  <5> for Exit #
+			in (op);
+
+			if op == 5:
+				break;;
+
+
+			in (a);
+			in (b);
+
+			if op == 1:
+				result = self.add(a, b);
+				out (result);
+			elif op == 2:
+				result = self.sub(a, b);
+				out (result);
+			elif op == 3:
+				result = self.mul(a, b);
+				out (result);
+			elif op == 4:
+				result = self.div(a, b);
+				out (result);;
+		;	
+	;
+			
