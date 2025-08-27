@@ -127,3 +127,32 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# --- Repo specific ignores ---
+
+# ANTLR4 generated artifacts (compiler_to_c)
+compiler_to_c/PppLexer.py
+compiler_to_c/PppParser.py
+compiler_to_c/PppListener.py
+compiler_to_c/PppVisitor.py
+compiler_to_c/*.interp
+compiler_to_c/*.tokens
+
+# Generated outputs from P++ → C pipeline
+compiler_to_c/tree.txt
+compiler_to_c/exe.c
+compiler_to_c/header.h
+compiler_to_c/exe
+compiler_to_c/exe.exe
+compiler_to_c/a.out
+compiler_to_c/a.exe
+
+# Generated outputs from Starlet → assembly/C
+compiler_to_asemply/examples/*.asm
+compiler_to_asemply/examples/*.int
+compiler_to_asemply/examples/*.c
+
+# Editors/OS noise
+.vscode/
+.idea/
+*.DS_Store

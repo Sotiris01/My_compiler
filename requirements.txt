@@ -1,0 +1,5 @@
+# Python dependencies for this repo
+
+# ANTLR4 runtime for Python (required by compiler_to_c)
+# Tip: match this with your antlr-4.x-complete.jar version when possible.
+antlr4-python3-runtime==4.13.1
