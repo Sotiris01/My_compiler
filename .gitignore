@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Compiler output files
+*.asm
+*.int
+exe.c
+header.h
+tree.txt
